@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeatherMap.DataAccess", "OpenWeatherMap.DataAccess\OpenWeatherMap.DataAccess.csproj", "{64C341A7-295E-4DDD-8B8D-CF2A0EC7CE08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeatherMap.DataAccess.UnitTests", "OpenWeatherMap.DataAccess.UnitTests\OpenWeatherMap.DataAccess.UnitTests.csproj", "{79AD9D4A-E9A8-49C6-889D-E563640020CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64C341A7-295E-4DDD-8B8D-CF2A0EC7CE08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64C341A7-295E-4DDD-8B8D-CF2A0EC7CE08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64C341A7-295E-4DDD-8B8D-CF2A0EC7CE08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64C341A7-295E-4DDD-8B8D-CF2A0EC7CE08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79AD9D4A-E9A8-49C6-889D-E563640020CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79AD9D4A-E9A8-49C6-889D-E563640020CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79AD9D4A-E9A8-49C6-889D-E563640020CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79AD9D4A-E9A8-49C6-889D-E563640020CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
