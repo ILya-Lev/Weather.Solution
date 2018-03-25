@@ -59,7 +59,7 @@ namespace OpenWeatherMap.DataAccess.UnitTests
 			discovered.Should()
 				.NotContainNulls()
 				.And.OnlyHaveUniqueItems()
-				.And.HaveCountGreaterThan(100);
+				.And.OnlyContain(loc => loc.CountryCode.Length == 2);
 		}
 
 		[Fact]

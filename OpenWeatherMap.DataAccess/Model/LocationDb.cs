@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 
 namespace OpenWeatherMap.DataAccess.Model
@@ -7,6 +8,7 @@ namespace OpenWeatherMap.DataAccess.Model
 	public class LocationDb
 	{
 		[Required]
+		[DatabaseGenerated(DatabaseGeneratedOption.None)]
 		public virtual int Id { get; set; }
 
 		public virtual string Name { get; set; }

@@ -107,6 +107,7 @@
     <Content Include="Data\TwoLocations.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Data\Response\ForecastKharkov_2018_03_25.json" />
     <None Include="Data\TwoLocationsComaAtEnd.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

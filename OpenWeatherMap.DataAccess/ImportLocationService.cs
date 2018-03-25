@@ -29,7 +29,9 @@ namespace OpenWeatherMap.DataAccess
 
 			var locations = _fileReaders.FirstOrDefault(pair => pair.Key(filePath)).Value(filePath);
 
-			var locationsDb = locations.Select(loc => new LocationDb
+			var locationsDb = locations
+			.Where(loc => loc?.CountryCode?.Length == 2)
+			.Select(loc => new LocationDb
 			{
 				Id = loc.Id,
 				Name = loc.Name,
