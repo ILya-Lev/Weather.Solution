@@ -26,6 +26,7 @@ namespace OpenWeatherMap.DataAccess.UnitTests
 		}
 
 		[InlineData(@".\Data\TwoLocations.json")]
+		[InlineData(@".\Data\TwoLocations.txt")]
 		[InlineData(@".\Data\TwoLocationsComaAtEnd.json")]
 		[Theory]
 		public void ImportLocations_FileWithTwoLocations_ParseTwoItemsOut(string filePath)
@@ -35,7 +36,8 @@ namespace OpenWeatherMap.DataAccess.UnitTests
 			discovered.Should().HaveCount(2);
 		}
 
-		[Fact(Skip = "large amount of work")]
+		//[Fact(Skip = "large amount of work")]
+		[Fact]
 		public void ImportLocations_BigFile_ParseAll()
 		{
 			var discovered = new ImportLocationService()
@@ -45,6 +47,28 @@ namespace OpenWeatherMap.DataAccess.UnitTests
 				.NotContainNulls()
 				.And.OnlyHaveUniqueItems()
 				.And.HaveCountGreaterThan(100);
+		}
+
+		[InlineData(@".\Data\city.list.json.gz")]
+		[InlineData(@".\Data\city.list.zip")]
+		[Theory]
+		public void ImportLocations_BigZippedFile_ParseAll(string filePath)
+		{
+			var discovered = new ImportLocationService().ImportLocations(filePath);
+
+			discovered.Should()
+				.NotContainNulls()
+				.And.OnlyHaveUniqueItems()
+				.And.HaveCountGreaterThan(100);
+		}
+
+		[Fact]
+		public void ImportLocations_7ZipFile_Unsupported()
+		{
+			Action importFrom7Zip = () => new ImportLocationService().ImportLocations(@".\Data\city.list.7z");
+
+			importFrom7Zip.Should()
+				.ThrowExactly<InvalidOperationException>("cannot find working nuget for 7zip decompressing");
 		}
 	}
 }
